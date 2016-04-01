@@ -77,6 +77,10 @@ angular.module('ui.thumbnail', [])
           deferred.resolve(canvas);
         };
 
+        img.onerror = function onerror() {
+           deferred.reject('Failed to generate thumbnail');
+        };
+
         img.src = src;
 
         return deferred.promise;
