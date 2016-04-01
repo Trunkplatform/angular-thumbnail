@@ -45,6 +45,8 @@ angular.module('ui.thumbnail', [])
                 deferred.reject(ex);
               }
             }
+          }, function onfailure(err) {
+            deferred.reject(err);
           }
         );
 
